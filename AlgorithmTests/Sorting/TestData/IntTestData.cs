@@ -19,9 +19,9 @@ namespace ubacs.AlgorithmTests.Sorting
                 new List<int>(),
                 GenerateList(1, int.MinValue, int.MaxValue),
                 GenerateList(2, int.MinValue, int.MaxValue),
-                new List<int>() { -3, -2, -1, 0, 1, 2, 3 },
-                new List<int>() { 3, 2, 1, 0, -1, -2, -3 },
-                GenerateList(20, -1, 2),
+                new List<int>() { -2, -1, 0, 1},
+                new List<int>() { 2, 1, 0, -1},
+                GenerateList(5, -1, 2),
                 GenerateList(100, int.MinValue, int.MaxValue)
             };
 
@@ -40,7 +40,6 @@ namespace ubacs.AlgorithmTests.Sorting
             for (int i = 0; i < count; i++)
             {
                 list.Add(RandomProvider.Instance.Random.Next(lowerBound, upperBound));
-                list.Add(5);
             }
             return list;
         }
