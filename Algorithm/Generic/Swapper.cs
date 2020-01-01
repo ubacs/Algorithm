@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
+using ubacs.Algorithm.Common;
+
 namespace ubacs.Algorithm.Generic
 {
     public static class Swapper
@@ -18,15 +20,15 @@ namespace ubacs.Algorithm.Generic
 
             if (list == null)
             {
-                throw new ArgumentNullException(nameof(list), "The parameter can not be null.");
+                throw new ArgumentNullException(nameof(list), Messages.ArgumentNullExceptionMessage);
             }
             if (i < 0 || i >= list.Count)
             {
-                throw new ArgumentOutOfRangeException(nameof(i), "Index was out of range. Must be non-negative and less than the size of the collection.");
+                throw new ArgumentOutOfRangeException(nameof(i), Messages.ArgumentOutOfRangeException);
             }
             if (j < 0 || j >= list.Count)
             {
-                throw new ArgumentOutOfRangeException(nameof(j), "Index was out of range. Must be non-negative and less than the size of the collection.");
+                throw new ArgumentOutOfRangeException(nameof(j), Messages.ArgumentOutOfRangeException);
             }
 
             T tmp = list[i];

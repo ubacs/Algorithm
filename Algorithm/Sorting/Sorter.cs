@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using ubacs.Algorithm.Common;
+
 namespace ubacs.Algorithm.Sorting
 {
     public abstract class Sorter : ISorter
     {
-        private static readonly string _parameterNullErrorMessage = "The parameter can not be null.";
-        private static readonly string _parameterNegativeErrorMessage = "The parameter can not be negative.";
-
         public void Sort<T>(IList<T> list)
         {
             if (list == null)
             {
-                throw new ArgumentNullException(nameof(list), _parameterNullErrorMessage);
+                throw new ArgumentNullException(nameof(list), Messages.ArgumentNullExceptionMessage);
             }
 
             //This check is added for consistency.
@@ -33,12 +32,12 @@ namespace ubacs.Algorithm.Sorting
         {
             if (list == null)
             {
-                throw new ArgumentNullException(nameof(list), _parameterNullErrorMessage);
+                throw new ArgumentNullException(nameof(list), Messages.ArgumentNullExceptionMessage);
             }
 
             if (comparer == null)
             {
-                throw new ArgumentNullException(nameof(comparer), _parameterNullErrorMessage);
+                throw new ArgumentNullException(nameof(comparer), Messages.ArgumentNullExceptionMessage);
             }
 
             SortImpl(list, 0, list.Count, comparer.Compare);
@@ -48,17 +47,17 @@ namespace ubacs.Algorithm.Sorting
         {
             if (list == null)
             {
-                throw new ArgumentNullException(nameof(list), _parameterNullErrorMessage);
+                throw new ArgumentNullException(nameof(list), Messages.ArgumentNullExceptionMessage);
             }
 
             if (index < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(index), _parameterNegativeErrorMessage);
+                throw new ArgumentOutOfRangeException(nameof(index), Messages.ArgumentOutOfRangeException);
             }
 
             if (count < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(count), _parameterNegativeErrorMessage);
+                throw new ArgumentOutOfRangeException(nameof(count), Messages.ArgumentOutOfRangeException);
             }
 
             if (index + count > list.Count)
@@ -68,7 +67,7 @@ namespace ubacs.Algorithm.Sorting
 
             if (comparer == null)
             {
-                throw new ArgumentNullException(nameof(comparer), _parameterNullErrorMessage);
+                throw new ArgumentNullException(nameof(comparer), Messages.ArgumentNullExceptionMessage);
             }
 
             SortImpl(list, index, count, comparer.Compare);
@@ -78,12 +77,12 @@ namespace ubacs.Algorithm.Sorting
         {
             if (list == null)
             {
-                throw new ArgumentNullException(nameof(list), _parameterNullErrorMessage);
+                throw new ArgumentNullException(nameof(list), Messages.ArgumentNullExceptionMessage);
             }
 
             if (comparison == null)
             {
-                throw new ArgumentNullException(nameof(comparison), _parameterNullErrorMessage);
+                throw new ArgumentNullException(nameof(comparison), Messages.ArgumentNullExceptionMessage);
             }
 
             SortImpl(list, 0, list.Count, comparison);
