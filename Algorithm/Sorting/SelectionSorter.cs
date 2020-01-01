@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using static ubacs.Algorithm.Generic.Swapper;
+
 namespace ubacs.Algorithm.Sorting
 {
     public class SelectionSorter : Sorter
@@ -18,9 +20,7 @@ namespace ubacs.Algorithm.Sorting
                     }
                 }
 
-                T tmp = list[i];
-                list[i] = list[maxIndex];
-                list[maxIndex] = tmp;
+                SwapElements(list, i, maxIndex);
             }
         }
     }

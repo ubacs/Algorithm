@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
+using static ubacs.Algorithm.Generic.Swapper;
+
 namespace ubacs.Algorithm.Sorting
 {
     public class QuickSorter : Sorter
@@ -23,9 +25,7 @@ namespace ubacs.Algorithm.Sorting
         private int Partition<T>(IList<T> list, int start, int end, Comparison<T> comparison)
         {
             int pivot = start + (end - start) / 2;
-            T tmp = list[pivot];
-            list[pivot] = list[start];
-            list[start] = tmp;
+            SwapElements(list, start, pivot);
             pivot = start;
 
             int i = start + 1;
@@ -42,17 +42,13 @@ namespace ubacs.Algorithm.Sorting
                 }
                 if (i < j)
                 {
-                    tmp = list[i];
-                    list[i] = list[j];
-                    list[j] = tmp;
+                    SwapElements(list, i, j);
                 }
             }
 
             if (j != pivot)
             {
-                tmp = list[pivot];
-                list[pivot] = list[j];
-                list[j] = tmp;
+                SwapElements(list, pivot, j);
             }
             
             return j;
