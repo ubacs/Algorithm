@@ -14,7 +14,7 @@ namespace ubacs.Algorithm.Sorting
                 int maxIndex = index;
                 for (int j = index + 1; j <= i; j++)
                 {
-                    if (comparison(list[maxIndex], list[j]) < 0)
+                    if (comparison(list[maxIndex], list[j]) <= 0)
                     {
                         maxIndex = j;
                     }
