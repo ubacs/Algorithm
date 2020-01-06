@@ -22,6 +22,10 @@ namespace ubacs.AlgorithmTests.Sorting
             {
                 SortTestData = (ISortTestData<T>)new StringTestData();
             }
+            else if (typeof(T) == typeof(ComparableKeyValuePair<string, int>))
+            {
+                SortTestData = (ISortTestData<T>)new ComparableKeyValuePairTestData();
+            }
             else if (typeof(T) == typeof(MutableComparableReferenceType<int>))
             {
                 SortTestData = (ISortTestData<T>)new MutableComparableTestData();
