@@ -5,7 +5,7 @@ using ubacs.Algorithm.Sorting;
 
 namespace ubacs.AlgorithmTests.Sorting
 {
-    public class SelectionSorterTests : SorterTests<SelectionSorter>
+    public class SelectionSorterTests : StableSorterTests<SelectionSorter>
     {
     }
 }
